@@ -19,4 +19,18 @@ export class PeliculasService {
                 //.pipe(map( (res: any) => res.results));
                             
   }
+  getCartelera(){
+    //para establecer las fechas en las carteleras
+    let desde=new Date();
+    let hasta=new Date();
+    hasta.setDate(hasta.getDate()+7);//le suo 7 dias a la fecha actual
+    
+    let desdeStr=`${desde.getFullYear()}-${(desde.getMonth()+1).toString().padStart(2, "0")}-${desde.getDate()}`;//para transformar la fecha a formato anio-mes-dia
+    //le sumamos un mes al dia porque por defecto es 0
+    let hastaStr=`${hasta.getFullYear()}-${(hasta.getMonth()+1).toString().padStart(2, "0")}-${hasta.getDate()}`;
+    //.toString().padStart(2, "0") es para que me devuleva el mes con dos digitos
+    
+    let url=`${this.urlMoviedb}/discover/movie?primary_release_date.gte=${desdeStr}&primary_release_date.lte=${hastaStr}&api_key=${this.apiKey}&languaje=es`;
+    return this.http.get(url).pipe(map( (res: any) => res.results));
+  }
 }
