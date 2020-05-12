@@ -6,6 +6,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PeliculasService {
+
+  peliculas:any[]=[];
   private apiKey:string="962d7de955349d532cdce27d85540eab";
   private urlMoviedb:string="https://api.themoviedb.org/3";
 
@@ -44,6 +46,9 @@ export class PeliculasService {
   buscarPelicula(texto:string){
     let url=`${this.urlMoviedb}/search/movie?query=${texto}&sort_by=popularity.desc&api_key=${this.apiKey}&languaje=es`;
     return this.http.get(url).pipe(map((res:any)=>{
+      this.peliculas=res.results;
+      //la varibale peliculas va a tener todas las peliculas encontradas al realizar la busqueda, 
+      //para cundo le de atras se puedan visualizar ahi
       return res.results;
     }));
   }
