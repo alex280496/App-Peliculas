@@ -9,12 +9,12 @@ import { PeliculasService } from '../../services/peliculas.service';
 export class HomeComponent implements OnInit {
 
   public cartelera:any;
-  public populares:any;//esto es para que no me de erroes en la vista si se demora en cargar la data
+  public populares:any;// tipo any esto es para que no me de erroes en la vista si se demora en cargar la data
+  public popularesNinos:any;
   constructor(private _peliculaService:PeliculasService) {
 
     this._peliculaService.getCartelera().subscribe(
       (response:any)=>{
-        console.log(response);
         this.cartelera=response;
       }
     );
@@ -22,7 +22,11 @@ export class HomeComponent implements OnInit {
     this._peliculaService.getPopulares().subscribe(
       (response:any)=>{
         this.populares=response.results;
-        console.log(this.populares);
+      }
+    );
+    this._peliculaService.getPopularesNinos().subscribe(
+      (response:any)=>{
+          this.popularesNinos=response;
       }
     );
    }
