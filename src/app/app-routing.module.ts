@@ -9,7 +9,8 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'buscar',component:SearchComponent},
   {path:'buscar/:texto',component:SearchComponent},
-  {path:'pelicula/:id',component:PeliculaComponent},
+  {path:'pelicula/:id/:pag',component:PeliculaComponent},
+  //pelicula/:id:pag , es para saber el id de la pelicula y la pagina en la cual fue llamada la pelicula
   {path:'**',pathMatch:'full',redirectTo:'home'}
 ];
 
