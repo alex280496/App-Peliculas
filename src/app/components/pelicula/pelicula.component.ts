@@ -19,7 +19,9 @@ export class PeliculaComponent implements OnInit {
         //console.log(params);
         this._peliculaService.getPelicula(params['id']).subscribe(
           response=>{
+            
             console.log(response);
+            this.pelicula=response;
           }
         );
       }

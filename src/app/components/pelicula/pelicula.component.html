@@ -1,3 +1,24 @@
-<div class="container main-container">
+<div *ngIf="pelicula" class="container main-container animated fadeIn fast">
+    <!-- es un proceso asincrono  por eso   no inicilaizo pelicula:any como vacio
+    cuando es cargado la oagina la pelicula no existe t daria erroe por eso ponemos el ngIF="pelicula"-->
+    
+    <h1>{{pelicula.original_title}}</h1>
+    <div class="row">
+        <div class="col-md-5">
+            <img src="{{pelicula |peliculaImagen:true}}" alt="{{pelicula.original_title}}"
+            class="img-thumbnail img-fluid">
+            <!-- peliculaImagen:true, es el pipe para el control de las imagenes
+            y a parte le envio el parametro de true para que en el pie me devulva el posterpath-->
+        </div>
+        <div class="col-md-7">
+            <h3>Sinopsis</h3>
+            <hr>
+            <p class="text-justify">{{pelicula.overview}}</p>
+            <p>{{pelicula.tagline}}</p>
+            <p>
+                Popularidad: <span class="badge badge-success">{{pelicula.popularity}}</span>
+            </p>
+        </div>
+    </div>
 
 </div>
