@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule, HttpClientJsonpModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+
 //archivo de rutas
 import { AppRoutingModule } from './app-routing.module';
 
@@ -27,7 +29,8 @@ import { GaleriaComponent } from './components/home/galeria.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
