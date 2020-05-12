@@ -6,51 +6,15 @@
 </div>
 
 <div class="container">
-    <h1>Cartelera</h1>
-    <hr>
-    <div class="row" *ngIf="cartelera">
-        <!--se muestra el row solo si la cartelera es diferente de nulo, es decir si tiene datos-->
-        <div class="col-md-6">
-            <div class="row">
-                <div class="col-md-12 populares-1" [ngStyle]="{'background-image':'url('+( cartelera[0] |peliculaImagen)+')'}">
 
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 populares-2" [ngStyle]="{'background-image':'url('+( cartelera[1] |peliculaImagen)+')'}">
+   
+    
+    <app-galeria [peliculas]="cartelera |slice:0:6"
+                titulo="Peliculas en Cartelera"></app-galeria>
+    <!--este es el componente padre y le envio la cartelera al componente galeria a traves de la variable peliculas
+    el slice prtmite divicir , en este caso enviar solo 6
+    el titulo va sin [] porque voy a enviar solo un texto no una variable como cartelera-->
 
-                </div>
-                <div class="col-md-6 populares-2" [ngStyle]="{'background-image':'url('+( cartelera[2] |peliculaImagen)+')'}">
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-
-            <div class="row">
-                <div class="col-md-6 populares-2" [ngStyle]="{'background-image':'url('+( cartelera[3] |peliculaImagen)+')'}">
-
-                </div>
-                <div class="col-md-6 populares-2" [ngStyle]="{'background-image':'url('+( cartelera[4] |peliculaImagen)+')'}">
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 populares-1" [ngStyle]="{'background-image':'url('+( cartelera[5] |peliculaImagen)+')'}">
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <h3 class="mt-5 text-center">Peliculas Populares</h3>
-    <hr>
+    <app-galeria [peliculas]="populares |slice:0:6"
+    titulo="Peliculas Populares"></app-galeria>
 </div>
-<!--
-<div class="card-columns">
-    <div class="card" *ngFor="let populares of peliculaspopulares">
-        <img src="" class="card-img-top" alt="...">
-
-    </div>
-</div>
--->

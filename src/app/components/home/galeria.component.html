@@ -1,1 +1,36 @@
-<p>galeria works!</p>
+<br>
+<h1>{{titulo}}</h1>
+<hr>
+<div class="row" *ngIf="peliculas">
+    <!--se muestra el row solo si la peliculas es diferente de nulo, es decir si tiene datos-->
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12 populares-1" [ngStyle]="{'background-image':'url('+( peliculas[0] |peliculaImagen)+')'}">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 populares-2" [ngStyle]="{'background-image':'url('+( peliculas[1] |peliculaImagen)+')'}">
+
+            </div>
+            <div class="col-md-6 populares-2" [ngStyle]="{'background-image':'url('+( peliculas[2] |peliculaImagen)+')'}">
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+
+        <div class="row">
+            <div class="col-md-6 populares-2" [ngStyle]="{'background-image':'url('+( peliculas[3] |peliculaImagen)+')'}">
+
+            </div>
+            <div class="col-md-6 populares-2" [ngStyle]="{'background-image':'url('+( peliculas[4] |peliculaImagen)+')'}">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 populares-1" [ngStyle]="{'background-image':'url('+( peliculas[5] |peliculaImagen)+')'}">
+            </div>
+        </div>
+    </div>
+
+</div>

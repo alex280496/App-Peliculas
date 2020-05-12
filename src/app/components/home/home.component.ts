@@ -9,7 +9,7 @@ import { PeliculasService } from '../../services/peliculas.service';
 export class HomeComponent implements OnInit {
 
   public cartelera:any;
-  public peliculaspopulares:any[]=[];
+  public populares:any;//esto es para que no me de erroes en la vista si se demora en cargar la data
   constructor(private _peliculaService:PeliculasService) {
 
     this._peliculaService.getCartelera().subscribe(
@@ -21,8 +21,8 @@ export class HomeComponent implements OnInit {
     
     this._peliculaService.getPopulares().subscribe(
       (response:any)=>{
-        this.peliculaspopulares=response.results;
-        console.log(this.peliculaspopulares);
+        this.populares=response.results;
+        console.log(this.populares);
       }
     );
    }
