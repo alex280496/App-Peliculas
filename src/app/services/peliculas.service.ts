@@ -33,4 +33,12 @@ export class PeliculasService {
     let url=`${this.urlMoviedb}/discover/movie?primary_release_date.gte=${desdeStr}&primary_release_date.lte=${hastaStr}&api_key=${this.apiKey}&languaje=es`;
     return this.http.get(url).pipe(map( (res: any) => res.results));
   }
+
+  getPopularesNinos(){
+    let url=`${this.urlMoviedb}/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=${this.apiKey}&languaje=es`;
+    return this.http.get(url).pipe(map((res:any)=>{ //res de tipo any para poder obtener directamente
+                                                    //el array de resultados
+                            return res.results;
+                        }));
+  }
 }

@@ -8,12 +8,14 @@ import { PeliculasService } from '../../services/peliculas.service';
 })
 export class HomeComponent implements OnInit {
 
+  public cartelera:any;
   public peliculaspopulares:any[]=[];
   constructor(private _peliculaService:PeliculasService) {
 
     this._peliculaService.getCartelera().subscribe(
       (response:any)=>{
         console.log(response);
+        this.cartelera=response;
       }
     );
     
