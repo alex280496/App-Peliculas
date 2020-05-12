@@ -14,10 +14,18 @@
             <h3>Sinopsis</h3>
             <hr>
             <p class="text-justify">{{pelicula.overview}}</p>
+            <h3>Frase Celebre</h3>
             <p>{{pelicula.tagline}}</p>
             <p>
-                Popularidad: <span class="badge badge-success">{{pelicula.popularity}}</span>
+                Popularidad: <span class="badge badge-success">{{pelicula.popularity |number:".0-0"}}</span>
             </p>
+            <p>
+                Votos Promedio: <span class="badge badge-success">{{pelicula.vote_average}}</span>
+            </p>
+            <button  [routerLink]="['/'+regresarA]"
+            class="btn btn-outline-danger btn-block">
+                Regresar
+            </button>
         </div>
     </div>
 

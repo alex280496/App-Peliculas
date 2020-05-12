@@ -10,6 +10,7 @@ import { PeliculasService } from '../../services/peliculas.service';
 export class PeliculaComponent implements OnInit {
 
   pelicula:any;
+  regresarA:string="";
   constructor(
     private route:ActivatedRoute,
     private _peliculaService:PeliculasService
@@ -17,6 +18,7 @@ export class PeliculaComponent implements OnInit {
     this.route.params.subscribe(
       params=>{
         //console.log(params);
+        this.regresarA=params['pag'];
         this._peliculaService.getPelicula(params['id']).subscribe(
           response=>{
             
