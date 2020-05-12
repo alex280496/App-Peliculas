@@ -5,19 +5,25 @@
     </div>
 </div>
 
+<div class="row" *ngIf="!cartelera">
+    <div class="col-md-12">
+        <div class="alert alert-info text-center">
+            <h3>Espere Porfavor....</h3>
+            <i class="fas fa-sync-alt fa-spin fa-5x"></i>
+        </div>
+    </div>
+</div>
+
 <div class="container">
 
-   
-    
-    <app-galeria [peliculas]="cartelera |slice:0:6"
-                titulo="Peliculas en Cartelera"></app-galeria>
+
+    <app-galeria [peliculas]="cartelera |slice:0:6" titulo="Peliculas en Cartelera"></app-galeria>
     <!--este es el componente padre y le envio la cartelera al componente galeria a traves de la variable peliculas
     el slice prtmite divicir , en este caso enviar solo 6
     el titulo va sin [] porque voy a enviar solo un texto no una variable como cartelera-->
 
-    <app-galeria [peliculas]="populares |slice:0:6"
-    titulo="Peliculas Populares"></app-galeria>
+    <app-galeria [peliculas]="populares |slice:0:6" titulo="Peliculas Populares"></app-galeria>
 
-    <app-galeria [peliculas]="popularesNinos |slice:0:6"
-    titulo="Peliculas populares para los mas pequeños"></app-galeria>
+    <app-galeria [peliculas]="popularesNinos |slice:0:6" titulo="Peliculas populares para los mas pequeños"></app-galeria>
+
 </div>

@@ -1,6 +1,8 @@
 <br>
 <h1>{{titulo}}</h1>
 <hr>
+
+
 <div class="row animated fadeIn fast" *ngIf="peliculas">
     <!--se muestra el row solo si la peliculas es diferente de nulo, es decir si tiene datos-->
     <div class="col-md-6">
@@ -9,7 +11,7 @@
             <div class="col-md-12 populares-1"
              [routerLink]="['/pelicula',peliculas[0].id,'home']"
              [ngStyle]="{'background-image':'url('+( peliculas[0] |peliculaImagen)+')'}">
-             <p>
+             <p class="title">
                  {{peliculas[0].original_title}}
              </p>
             </div>
@@ -18,14 +20,14 @@
             <div class="col-md-6 populares-2" 
             [routerLink]="['/pelicula',peliculas[1].id,'home']"
             [ngStyle]="{'background-image':'url('+( peliculas[1] |peliculaImagen)+')'}">
-            <p>
+            <p class="title">
                 {{peliculas[1].original_title}}
             </p>
             </div>
             <div class="col-md-6 populares-2" 
             [routerLink]="['/pelicula',peliculas[2].id,'home']"
             [ngStyle]="{'background-image':'url('+( peliculas[2] |peliculaImagen)+')'}">
-            <p>
+            <p class="title">
                 {{peliculas[2].original_title}}
             </p>
             </div>
@@ -37,14 +39,14 @@
             <div class="col-md-6 populares-2"
             [routerLink]="['/pelicula',peliculas[3].id,'home']" 
             [ngStyle]="{'background-image':'url('+( peliculas[3] |peliculaImagen)+')'}">
-            <p>
+            <p class="title">
                 {{peliculas[3].original_title}}
             </p>
             </div>
             <div class="col-md-6 populares-2" 
             [routerLink]="['/pelicula',peliculas[4].id,'home']"
             [ngStyle]="{'background-image':'url('+( peliculas[4] |peliculaImagen)+')'}">
-            <p>
+            <p class="title">
                     {{peliculas[4].original_title}}
             </p>
             </div>
@@ -53,7 +55,7 @@
             <div class="col-md-12 populares-1" 
             [routerLink]="['/pelicula',peliculas[5].id,'home']"
             [ngStyle]="{'background-image':'url('+( peliculas[5] |peliculaImagen)+')'}">
-            <p>
+            <p class="title">
                 {{peliculas[0].original_title}}
             </p>
             </div>

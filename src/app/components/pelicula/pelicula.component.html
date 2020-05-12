@@ -1,3 +1,13 @@
+
+ <div class="row mt-3" *ngIf="!pelicula">
+        <div class="col-md-12">
+            <div class="alert alert-info text-center">
+                <h3>Espere Porfavor....</h3>
+                <i class="fas fa-sync-alt fa-spin fa-5x"></i>
+            </div>
+        </div>
+</div>
+
 <div *ngIf="pelicula" class="container main-container animated fadeIn fast">
     <!-- es un proceso asincrono  por eso   no inicilaizo pelicula:any como vacio
     cuando es cargado la oagina la pelicula no existe t daria erroe por eso ponemos el ngIF="pelicula"-->
