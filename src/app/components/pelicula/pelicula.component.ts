@@ -11,6 +11,7 @@ export class PeliculaComponent implements OnInit {
 
   pelicula:any;
   regresarA:string="";
+  busqueda:string="";
   constructor(
     private route:ActivatedRoute,
     private _peliculaService:PeliculasService
@@ -19,6 +20,9 @@ export class PeliculaComponent implements OnInit {
       params=>{
         //console.log(params);
         this.regresarA=params['pag'];
+        if(params['busqueda']){
+          this.busqueda=params['busqueda'];
+        }
         this._peliculaService.getPelicula(params['id']).subscribe(
           response=>{
             

@@ -9,18 +9,25 @@
             <div class="col-md-12 populares-1"
              [routerLink]="['/pelicula',peliculas[0].id,'home']"
              [ngStyle]="{'background-image':'url('+( peliculas[0] |peliculaImagen)+')'}">
+             <p>
+                 {{peliculas[0].original_title}}
+             </p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 populares-2" 
             [routerLink]="['/pelicula',peliculas[1].id,'home']"
             [ngStyle]="{'background-image':'url('+( peliculas[1] |peliculaImagen)+')'}">
-
+            <p>
+                {{peliculas[1].original_title}}
+            </p>
             </div>
             <div class="col-md-6 populares-2" 
             [routerLink]="['/pelicula',peliculas[2].id,'home']"
             [ngStyle]="{'background-image':'url('+( peliculas[2] |peliculaImagen)+')'}">
-
+            <p>
+                {{peliculas[2].original_title}}
+            </p>
             </div>
         </div>
     </div>
@@ -30,18 +37,25 @@
             <div class="col-md-6 populares-2"
             [routerLink]="['/pelicula',peliculas[3].id,'home']" 
             [ngStyle]="{'background-image':'url('+( peliculas[3] |peliculaImagen)+')'}">
-
+            <p>
+                {{peliculas[3].original_title}}
+            </p>
             </div>
             <div class="col-md-6 populares-2" 
             [routerLink]="['/pelicula',peliculas[4].id,'home']"
             [ngStyle]="{'background-image':'url('+( peliculas[4] |peliculaImagen)+')'}">
-
+            <p>
+                    {{peliculas[4].original_title}}
+            </p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12 populares-1" 
             [routerLink]="['/pelicula',peliculas[5].id,'home']"
             [ngStyle]="{'background-image':'url('+( peliculas[5] |peliculaImagen)+')'}">
+            <p>
+                {{peliculas[0].original_title}}
+            </p>
             </div>
         </div>
     </div>

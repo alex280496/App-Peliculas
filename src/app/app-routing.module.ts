@@ -11,6 +11,8 @@ const routes: Routes = [
   {path:'buscar/:texto',component:SearchComponent},
   {path:'pelicula/:id/:pag',component:PeliculaComponent},
   //pelicula/:id:pag , es para saber el id de la pelicula y la pagina en la cual fue llamada la pelicula
+  //es una ruta opcional
+  {path:'pelicula/:id/:pag/:busqueda',component:PeliculaComponent},//es una ruta opcional
   {path:'**',pathMatch:'full',redirectTo:'home'}
 ];
 
