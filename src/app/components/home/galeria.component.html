@@ -1,5 +1,5 @@
-<br>
-<h1>{{titulo}}</h1>
+
+<h1 class="mt-5" *ngIf="peliculas">{{titulo}}</h1>
 <hr>
 
 
@@ -56,10 +56,9 @@
             [routerLink]="['/pelicula',peliculas[5].id,'home']"
             [ngStyle]="{'background-image':'url('+( peliculas[5] |peliculaImagen)+')'}">
             <p class="title">
-                {{peliculas[0].original_title}}
+                {{peliculas[5].original_title}}
             </p>
             </div>
         </div>
     </div>
-
 </div>
